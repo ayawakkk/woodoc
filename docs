@@ -15,3 +15,6 @@ openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 3650
 
 https://learn.microsoft.com/en-us/windows/wsl/install-manual
 Downloading distributions
+
+AndroidStudio升级Gradle到7+，compileSdkVersion 33+
+https://www.cnblogs.com/tony-yang-flutter/p/18224017

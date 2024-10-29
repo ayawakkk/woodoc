@@ -27,3 +27,11 @@ https://github.com/nihui/ncnn-android-squeezenet
 
 NCNN推理
 https://blog.csdn.net/weixin_43999691/article/details/140629910
+
+android studio 连接雷电模拟器故障排除
+netstat -ano|findstr 5555
+resmon 查看5555端口
+任务管理器查看5555端口对应进程
+
+adb devices
+任务管理器查看 运行中的adb进程 为android studio sdk 提供

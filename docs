@@ -35,3 +35,12 @@ resmon 查看5555端口
 
 adb devices
 任务管理器查看 运行中的adb进程 为android studio sdk 提供
+
+
+# 添加文件或目录，大于50M的都需要
+git lfs track "preson/*"
+git lfs track variables.data-00000-of-00001
+# 提交
+git add .
+git commit -m "# 注释信息"
+git push origin master

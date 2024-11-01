@@ -44,3 +44,25 @@ git lfs track variables.data-00000-of-00001
 git add .
 git commit -m "# 注释信息"
 git push origin master
+
+自定义桶配置
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": [
+					"*"
+				]
+			},
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::3dgs/*"
+			]
+		}
+	]
+}

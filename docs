@@ -70,3 +70,6 @@ git push origin master
 
 盘点|统计Android内存使用的方法有哪些？
 https://www.jianshu.com/p/43956954e015
+
+cn.hutool.core.collection.CollUtil#getFieldValues(java.lang.Iterable<?>, java.lang.String, java.lang.Class<T>)
+

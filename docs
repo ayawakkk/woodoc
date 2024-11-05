@@ -73,3 +73,5 @@ https://www.jianshu.com/p/43956954e015
 
 cn.hutool.core.collection.CollUtil#getFieldValues(java.lang.Iterable<?>, java.lang.String, java.lang.Class<T>)
 
+
+ex.set_light_mode(true);

@@ -94,3 +94,6 @@ set ruler " 在右下角显示光标所在的行数等信息
 set autoindent " 设置每次单击Enter键后，光标移动到下一行时与上一行的起始字符对齐
 syntax on " 即设置语法检测，当编辑C或者Shell脚本时，关键字会用特殊颜色显示
 
+docker部署minio
+docker run -d  --restart=always --name myminio -p 9000:9000   -p 9001:9001  -v /aisee_dataset/z30031511/data:/data  -v /aisee_dataset/z30031511/config:/root/.minio  -e MINIO_ROOT_USER=admin   -e MINIO_ROOT_PASSWORD=12345678   minio/minio server /data --console-address ":9001" 
+

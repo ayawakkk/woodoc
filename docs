@@ -85,3 +85,12 @@ https://b11et3un53m.feishu.cn/wiki/wikcnrigEuKkRaba6YaZubSuINf
 java.util.stream.Stream#collect(java.util.stream.Collector<? super T,A,R>)
 java.util.stream.Collectors#toMap(java.util.function.Function<? super T,? extends K>, java.util.function.Function<? super T,? extends U>)
 
+
+Vi
+打开文件后，按 i 进入编辑模式
+set nu " 设置显示行号
+set showmode " 设置在命令行界面最下面显示当前模式等
+set ruler " 在右下角显示光标所在的行数等信息
+set autoindent " 设置每次单击Enter键后，光标移动到下一行时与上一行的起始字符对齐
+syntax on " 即设置语法检测，当编辑C或者Shell脚本时，关键字会用特殊颜色显示
+

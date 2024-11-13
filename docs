@@ -105,4 +105,7 @@ docker run -d  --restart=always --name myminio -p 9000:9000   -p 9001:9001  -v /
 cat /proc/version
 uname -a
 
-
+python 连接配置SSL证书的Minio服务
+https://blog.csdn.net/weixin_44331765/article/details/127731143
+python minio client报[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certific
+https://blog.csdn.net/NICK1211/article/details/126905215

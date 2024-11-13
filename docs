@@ -1,6 +1,10 @@
+通过Docker部署的ffmpeg进行视频分割与合并
 https://blog.csdn.net/fm0517/article/details/124963273
+如何在较旧版本的docker中使用gpu
 https://blog.csdn.net/weixin_43590796/article/details/134740906
+【博客501】Nvidia docker runtime原理
 https://blog.csdn.net/qq_43684922/article/details/127024933
+
 https://tool.ip138.com/img2base64/
 
 https://github.com/MyMonsterCat/RapidOcr-Java
@@ -95,4 +99,10 @@ syntax on " 即设置语法检测，当编辑C或者Shell脚本时，关键字�
 
 docker部署minio
 docker run -d  --restart=always --name myminio -p 9000:9000   -p 9001:9001  -v /aisee_dataset/z30031511/data:/data  -v /aisee_dataset/z30031511/config:/root/.minio  -e MINIO_ROOT_USER=admin   -e MINIO_ROOT_PASSWORD=12345678   minio/minio server /data --console-address ":9001" 
+
+系统版本号的查看
+
+cat /proc/version
+uname -a
+
 

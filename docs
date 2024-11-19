@@ -125,3 +125,7 @@ if (net->load_param("model.param") == 0 && net->load_model("model.bin") == 0)
 
 delete net; // 销毁对象
 
+
+ncnn::Net net;
+net.clear();
+

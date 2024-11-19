@@ -129,3 +129,58 @@ delete net; // 销毁对象
 ncnn::Net net;
 net.clear();
 
+
+JNI c++ 返回自定义的对象
+
+#include <jni.h>
+#include <string>
+
+extern "C"
+JNIEXPORT jobject JNICALL
+Java_com_example_myapp_MainActivity_getMyObject(JNIEnv *env, jobject /* this */) {
+    // 1. 找到 Java 类的引用
+    jclass myObjectClass = env->FindClass("com/example/myapp/MyObject");
+    if (!myObjectClass) {
+        return nullptr; // 类未找到
+    }
+
+    // 2. 获取 Java 类的构造方法 ID
+    jmethodID constructor = env->GetMethodID(myObjectClass, "<init>", "(ILjava/lang/String;)V");
+    if (!constructor) {
+        return nullptr; // 构造方法未找到
+    }
+
+    // 3. 构造参数
+    jint id = 123;
+    jstring name = env->NewStringUTF("My Custom Object");
+
+    // 4. 创建 Java 对象
+    jobject myObject = env->NewObject(myObjectClass, constructor, id, name);
+
+    // 5. 释放局部引用（如果需要）
+    env->DeleteLocalRef(name);
+
+    // 6. 返回 Java 对象
+    return myObject;
+}
+
+
+private native MyObject getMyObject();
+
+
+public class MyObject {
+    private int id;
+    private String name;
+
+    public MyObject(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "MyObject{id=" + id + ", name='" + name + "'}";
+    }
+}
+
+

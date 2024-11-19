@@ -112,3 +112,16 @@ https://blog.csdn.net/NICK1211/article/details/126905215
 
 scp
 scp -r root@10.244.137.74:/opt/ai_data/z30031511/dataset/ ./
+
+NCNN清理模型
+ncnn::Net* net = new ncnn::Net();
+
+// 加载模型
+if (net->load_param("model.param") == 0 && net->load_model("model.bin") == 0)
+{
+    // 清理资源
+    net->clear();
+}
+
+delete net; // 销毁对象
+

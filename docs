@@ -188,4 +188,4 @@ public class MyObject {
 linux scp
 scp -r root@10.244.137.74:/opt/ai_data/s00658774/mycodes/edgeyolo/images/failana0926/ ./
 
-
+DynamicTableNameInnterInterceptor

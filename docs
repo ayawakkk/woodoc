@@ -115,9 +115,6 @@ https://blog.csdn.net/weixin_44331765/article/details/127731143
 python minio client报[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certific
 https://blog.csdn.net/NICK1211/article/details/126905215
 
-scp
-scp -r root@10.244.137.74:/opt/ai_data/z30031511/dataset/ ./
-
 NCNN清理模型
 ncnn::Net* net = new ncnn::Net();
 
@@ -187,5 +184,8 @@ public class MyObject {
         return "MyObject{id=" + id + ", name='" + name + "'}";
     }
 }
+
+linux scp
+scp -r root@10.244.137.74:/opt/ai_data/s00658774/mycodes/edgeyolo/images/failana0926/ ./
 
 

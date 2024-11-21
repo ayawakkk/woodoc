@@ -5,6 +5,11 @@ https://blog.csdn.net/weixin_43590796/article/details/134740906
 【博客501】Nvidia docker runtime原理
 https://blog.csdn.net/qq_43684922/article/details/127024933
 
+系统版本号的查看
+cat /proc/version
+uname -a
+
+
 https://tool.ip138.com/img2base64/
 
 https://github.com/MyMonsterCat/RapidOcr-Java

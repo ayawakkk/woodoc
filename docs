@@ -189,3 +189,9 @@ linux scp
 scp -r root@10.244.137.74:/opt/ai_data/s00658774/mycodes/edgeyolo/images/failana0926/ ./
 
 DynamicTableNameInnterInterceptor
+
+Python
+pip install --trusted-host mirrors.tools.huawei.com -i https://mirrors.tools.huawei.com/pypi/simple  paramiko
+pip config set global.index-url http://mirrors.tools.huawei.com/pypi/simple
+pip config set global.trusted-host mirrors.tools.huawei.com
+

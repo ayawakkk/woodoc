@@ -195,3 +195,6 @@ pip install --trusted-host mirrors.tools.huawei.com -i https://mirrors.tools.hua
 pip config set global.index-url http://mirrors.tools.huawei.com/pypi/simple
 pip config set global.trusted-host mirrors.tools.huawei.com
 
+端口映射
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=9001 connectaddress=172.19.92.225 connectport=9001
+netsh interface portproxy del v4tov4 listenport=3000 listenaddress=0.0.0.0

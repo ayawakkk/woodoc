@@ -202,3 +202,12 @@ netsh interface portproxy del v4tov4 listenport=3000 listenaddress=0.0.0.0
 
 统计
 ls -l | grep "^-" | wc -l
+
+1. 查看所有的端口占用情况
+netstat -ano
+2. 查看指定端口的占用情况
+C:\>netstat -aon|findstr "9050"
+3. 查看 PID 对应的进程
+C:\>tasklist|findstr "2016"
+4. 结束该进程
+C:\>taskkill /f /t /im tor.exe

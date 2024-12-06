@@ -211,3 +211,10 @@ C:\>netstat -aon|findstr "9050"
 C:\>tasklist|findstr "2016"
 4. 结束该进程
 C:\>taskkill /f /t /im tor.exe
+
+1. 使用lscpu命令：在终端中输入lscpu命令，即可查看系统中的CPU个数和其他相关信息。
+lscpu
+2. 使用nproc命令：在终端中输入nproc命令，即可查看系统中的CPU个数。
+nproc
+3. 查看/proc/cpuinfo文件：可以通过查看/proc/cpuinfo文件来获取有关系统CPU的详细信息，包括CPU个数、核心数等。
+cat /proc/cpuinfo | grep "processor" | wc -l

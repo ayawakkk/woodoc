@@ -220,3 +220,4 @@ nproc
 cat /proc/cpuinfo | grep "processor" | wc -l
 
 com.github.benmanes.caffeine.cache.Cache
+java.util.function.Function#identity

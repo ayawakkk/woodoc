@@ -218,3 +218,5 @@ lscpu
 nproc
 3. 查看/proc/cpuinfo文件：可以通过查看/proc/cpuinfo文件来获取有关系统CPU的详细信息，包括CPU个数、核心数等。
 cat /proc/cpuinfo | grep "processor" | wc -l
+
+com.github.benmanes.caffeine.cache.Cache

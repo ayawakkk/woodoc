@@ -221,3 +221,11 @@ cat /proc/cpuinfo | grep "processor" | wc -l
 
 com.github.benmanes.caffeine.cache.Cache
 java.util.function.Function#identity
+
+
+
+TJXT
+lombok.RequiredArgsConstructor
+框架
+swagger
+mybatis-plus

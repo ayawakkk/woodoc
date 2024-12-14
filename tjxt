@@ -3,3 +3,4 @@ lombok.RequiredArgsConstructor
 框架
 swagger
 mybatis-plus
+org.springframework.data.redis.core.RedisTemplate#opsForHash

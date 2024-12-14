@@ -4,3 +4,4 @@ lombok.RequiredArgsConstructor
 swagger
 mybatis-plus
 org.springframework.data.redis.core.RedisTemplate#opsForHash
+异步生成兑换码

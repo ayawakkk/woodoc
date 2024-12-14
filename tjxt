@@ -5,3 +5,4 @@ swagger
 mybatis-plus
 org.springframework.data.redis.core.RedisTemplate#opsForHash
 异步生成兑换码
+流式编程 java.util.stream.Stream#collect(java.util.stream.Collector<? super T,A,R>)

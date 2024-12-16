@@ -29,3 +29,4 @@ org.springframework.data.redis.core.RedisTemplate#execute(org.springframework.da
 Base32转码 自增id
 BitMap 重兑校验 
 JWT技术 防刷校验
+线程池异步生成兑换码

@@ -3,6 +3,8 @@ lombok.RequiredArgsConstructor
 框架
 swagger
 mybatis-plus
+hutool工具包
 org.springframework.data.redis.core.RedisTemplate#opsForHash
 异步生成兑换码
 流式编程 java.util.stream.Stream#collect(java.util.stream.Collector<? super T,A,R>)
+cn.hutool.core.bean.BeanUtil

@@ -10,3 +10,5 @@ org.springframework.data.redis.core.RedisTemplate#opsForHash
 cn.hutool.core.bean.BeanUtil
  线程池策略
 java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy
+java 11 新特性
+java.util.stream.Collectors#groupingBy(java.util.function.Function<? super T,? extends K>, java.util.stream.Collector<? super T,A,D>)

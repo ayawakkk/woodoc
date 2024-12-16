@@ -14,3 +14,14 @@ java 11 新特性
 java.util.stream.Collectors#groupingBy(java.util.function.Function<? super T,? extends K>, java.util.stream.Collector<? super T,A,D>)
 执行lua脚本
 org.springframework.data.redis.core.RedisTemplate#execute(org.springframework.data.redis.core.script.RedisScript<T>, java.util.List<K>, java.lang.Object...)
+
+
+兑换码的需求
+- 可读性好：兑换码是要给用户使用的，用户需要输入兑换码，因此可读性必须好。我们的要求：
+  - 长度不超过10个字符
+  - 只能是24个大写字母和8个数字：ABCDEFGHJKLMNPQRSTUVWXYZ23456789
+- 数据量大：优惠活动比较频繁，必须有充足的兑换码，最好有10亿以上的量
+- 唯一性：10亿兑换码都必须唯一，不能重复，否则会出现兑换混乱的情况
+- 不可重兑：兑换码必须便于校验兑换状态，避免重复兑换
+- 防止爆刷：兑换码的规律性不能很明显，不能轻易被人猜测到其它兑换码
+- 高效：兑换码生成、验证的算法必须保证效率，避免对数据库带来较大的压力

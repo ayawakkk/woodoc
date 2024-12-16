@@ -25,3 +25,7 @@ org.springframework.data.redis.core.RedisTemplate#execute(org.springframework.da
 - 不可重兑：兑换码必须便于校验兑换状态，避免重复兑换
 - 防止爆刷：兑换码的规律性不能很明显，不能轻易被人猜测到其它兑换码
 - 高效：兑换码生成、验证的算法必须保证效率，避免对数据库带来较大的压力
+
+Base32转码 自增id
+BitMap 重兑校验 
+JWT技术 防刷校验

@@ -55,6 +55,10 @@ XXL-JOB的数据分片
 乐观锁解决超卖
 UPDATE coupon SET issue_num = issue_num + 1 WHERE id = 1 AND issue_num < total_num
 
+
+
+
+
 锁对象
 并且同步代码块的锁指定为用户id，那么同一个用户并发操作时会被锁定，不同用户互相没有影响
 先开启事务(可重复读)，再获取锁 ---> 锁失效
@@ -91,3 +95,5 @@ userCouponService.checkAndcreateUserCoupon(coupon,userId,null);
 
 Redisson
 基于AOP的思想，将业务部分作为切入点，将业务前后的锁操作作为环绕增强。
+
+public class LockAspect 

@@ -52,3 +52,5 @@ XXL-JOB的数据分片
 
 
 兑换码是否兑换则要利用BitMap
+乐观锁解决超卖
+UPDATE coupon SET issue_num = issue_num + 1 WHERE id = 1 AND issue_num < total_num

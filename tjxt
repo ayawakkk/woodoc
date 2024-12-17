@@ -57,4 +57,4 @@ UPDATE coupon SET issue_num = issue_num + 1 WHERE id = 1 AND issue_num < total_n
 
 锁对象
 并且同步代码块的锁指定为用户id，那么同一个用户并发操作时会被锁定，不同用户互相没有影响
-先开启事务，再获取锁 ---> 锁失效
+先开启事务(可重复读)，再获取锁 ---> 锁失效

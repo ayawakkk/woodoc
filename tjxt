@@ -96,4 +96,101 @@ userCouponService.checkAndcreateUserCoupon(coupon,userId,null);
 Redisson
 基于AOP的思想，将业务部分作为切入点，将业务前后的锁操作作为环绕增强。
 
-public class LockAspect 
+
+
+@Component
+@Aspect
+@RequiredArgsConstructor
+public class MyLockAspect implements Ordered {
+
+    private final MyLockFactory lockFactory;
+
+    @Around("@annotation(myLock)")
+    public Object tryLock(ProceedingJoinPoint pjp, MyLock myLock) throws Throwable {
+        // 1.创建锁对象
+        RLock lock = lockFactory.getLock(myLock.lockType(), myLock.name());
+        // 2.尝试获取锁
+        boolean isLock = myLock.lockStrategy().tryLock(lock, myLock);
+        // 3.判断是否成功
+        if(!isLock) {
+            // 3.1.失败，快速结束
+            return null;
+        }
+        try {
+            // 3.2.成功，执行业务
+            return pjp.proceed();
+        } finally {
+            // 4.释放锁
+            lock.unlock();
+        }
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+}
+
+@Component
+public class MyLockFactory {
+
+    private final Map<MyLockType, Function<String, RLock>> lockHandlers;
+
+    public MyLockFactory(RedissonClient redissonClient) {
+        this.lockHandlers = new EnumMap<>(MyLockType.class);
+        this.lockHandlers.put(RE_ENTRANT_LOCK, redissonClient::getLock);
+        this.lockHandlers.put(FAIR_LOCK, redissonClient::getFairLock);
+        this.lockHandlers.put(READ_LOCK, name -> redissonClient.getReadWriteLock(name).readLock());
+        this.lockHandlers.put(WRITE_LOCK, name -> redissonClient.getReadWriteLock(name).writeLock());
+    }
+
+    public RLock getLock(MyLockType lockType, String name){
+        return lockHandlers.get(lockType).apply(name);
+    }
+}
+
+
+public enum MyLockStrategy {
+    SKIP_FAST(){
+        @Override
+        public boolean tryLock(RLock lock, MyLock prop) throws InterruptedException {
+            return lock.tryLock(0, prop.leaseTime(), prop.unit());
+        }
+    },
+    FAIL_FAST(){
+        @Override
+        public boolean tryLock(RLock lock, MyLock prop) throws InterruptedException {
+            boolean isLock = lock.tryLock(0, prop.leaseTime(), prop.unit());
+            if (!isLock) {
+                throw new BizIllegalException("请求太频繁");
+            }
+            return true;
+        }
+    },
+    KEEP_TRYING(){
+        @Override
+        public boolean tryLock(RLock lock, MyLock prop) throws InterruptedException {
+            lock.lock( prop.leaseTime(), prop.unit());
+            return true;
+        }
+    },
+    SKIP_AFTER_RETRY_TIMEOUT(){
+        @Override
+        public boolean tryLock(RLock lock, MyLock prop) throws InterruptedException {
+            return lock.tryLock(prop.waitTime(), prop.leaseTime(), prop.unit());
+        }
+    },
+    FAIL_AFTER_RETRY_TIMEOUT(){
+        @Override
+        public boolean tryLock(RLock lock, MyLock prop) throws InterruptedException {
+            boolean isLock = lock.tryLock(prop.waitTime(), prop.leaseTime(), prop.unit());
+            if (!isLock) {
+                throw new BizIllegalException("请求太频繁");
+            }
+            return true;
+        }
+    },
+    ;
+
+    public abstract boolean tryLock(RLock lock, MyLock prop) throws InterruptedException;
+}

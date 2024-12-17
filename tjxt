@@ -87,3 +87,7 @@ userCouponService.checkAndcreateUserCoupon(coupon,userId,null);
 - 超时问题：利用WatchDog（看门狗）机制，获取锁成功时开启一个定时任务，在锁到期前自动续期，避免超时释放。而当服务宕机后，WatchDog跟着停止运行，不会导致死锁。
 - 锁重入问题：可以模拟Synchronized原理，放弃setnx，而是利用Redis的Hash结构来记录锁的持有者以及重入次数，获取锁时重入次数+1，释放锁是重入次数-1，次数为0则锁删除
 - 主从一致性问题：可以利用Redis官网推荐的RedLock机制来解决
+
+
+Redisson
+基于AOP的思想，将业务部分作为切入点，将业务前后的锁操作作为环绕增强。

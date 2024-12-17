@@ -60,3 +60,4 @@ UPDATE coupon SET issue_num = issue_num + 1 WHERE id = 1 AND issue_num < total_n
 先开启事务(可重复读)，再获取锁 ---> 锁失效
 事务失效问题 
 由于Spring的事务是基于AOP的方式结合动态代理来实现的。因此事务方法一定要是public的，这样才能便于被Spring做事务的代理和增强。
+事务传播行为不对 默认事务传播行为（spring默认传播行为,支持当前事务，如果当前没有事务，则新建一个事务）+ REQUIRES_NEW

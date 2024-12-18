@@ -198,5 +198,6 @@ public enum MyLockStrategy {
 
 org.springframework.data.redis.core.RedisTemplate#opsForZSet
 
-缓存 
+发优惠券缓存信息
 PromotionConstants.COUPON_CACHE_KEY_PREFIX + coupon.getId()  issueBeginTime issueEndTime totalNum userLimit
+领优惠券 查更新缓存+MQ

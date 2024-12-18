@@ -269,4 +269,5 @@ Pipeline 批量查询点赞状态
 积分系统
 签到 BitMap
 MQ 异步保存积分记录 sortedset 实时榜单
+分布式任务调度XXL-JOB 历史榜单数据持久化
 

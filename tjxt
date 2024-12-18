@@ -194,3 +194,6 @@ public enum MyLockStrategy {
 
     public abstract boolean tryLock(RLock lock, MyLock prop) throws InterruptedException;
 }
+
+
+org.springframework.data.redis.core.RedisTemplate#opsForZSet

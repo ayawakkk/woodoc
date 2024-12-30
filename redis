@@ -35,3 +35,7 @@ sorted_set可以实现有序性操作，从而实现排行榜等功能。
 
 RedisDb 数据结构
 https://xiaolincoding.com/redis/data_struct/data_struct.html
+
+GeoHash是一种地理位置编码方法。它是一种分层的空间数据结构，将空间细分为网
+格形状的桶，这是所谓的z顺序曲线的众多应用之一，通常是空间填充曲线。
+

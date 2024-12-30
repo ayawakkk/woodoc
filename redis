@@ -34,4 +34,4 @@ sorted_set可以实现有序性操作，从而实现排行榜等功能。
 
 
 RedisDb 数据结构
-
+https://xiaolincoding.com/redis/data_struct/data_struct.html

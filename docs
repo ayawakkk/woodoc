@@ -229,3 +229,9 @@ lombok.RequiredArgsConstructor
 框架
 swagger
 mybatis-plus
+
+
+Use this token to access the HTTP API:
+7524188482:AAF1JSUvSviSunCVBDqOIq3tddL5OtLtfj0
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+

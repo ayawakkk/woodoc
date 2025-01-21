@@ -237,3 +237,7 @@ find /path/to/search -type f -size 2c -print0 | xargs -0 rm
 - `-size 2c` 表示查找大小为2字节的文件。注意这里的单位是字节，`c`表示字节。
 - `-print0` 和 `xargs -0` 的组合可以确保即使文件名包含空格或特殊字符也能正确处理。
 
+
+Redis热点Key问题分析与解决方案
+https://www.jb51.net/database/333880vak.htm
+

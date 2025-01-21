@@ -241,6 +241,8 @@ find /path/to/search -type f -size 2c -print0 | xargs -0 rm
 Redis热点Key问题分析与解决方案
 https://www.jb51.net/database/333880vak.htm
 https://article.juejin.cn/post/7224433107776552997
+https://zhuanlan.zhihu.com/p/720919305
+
 6.1 数据分片
 数据分片是通过将热点数据分散存储在多个Redis节点上，避免单个节点负载过高，是解决热点Key问题最常用的策略。
 例如，在Redis Cluster模式下，数据自动按槽位分布在多个节点上，从而实现负载均衡。对于非Cluster模式，可以通过客户端或代理层实现一致性哈希等分片算法，将数据分布在多个Redis实例上。

@@ -2,3 +2,4 @@ https://j1wtmv7ajj.feishu.cn/wiki/YJCMwg4JLiPQtQk1eUgcIKomnfU
 
 org.apache.commons.io.IOUtils#toByteArray(java.io.InputStream)
 lombok.Builder
+com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator#nextId

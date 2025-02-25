@@ -4,3 +4,7 @@ https://j1wtmv7ajj.feishu.cn/wiki/BiNgwySGEiifu2kjqHZcLvmlnkh
 org.apache.commons.io.IOUtils#toByteArray(java.io.InputStream)
 lombok.Builder
 com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator#nextId
+
+分片文件上传 https://help.aliyun.com/zh/oss/user-guide/multipart-upload 
+任务调度-xxl-job
+SpringCloud-Stream屏蔽底层消息中间件的差异，降低切换版本

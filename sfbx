@@ -12,3 +12,6 @@ SpringCloud-Stream屏蔽底层消息中间件的差异，降低切换版本
 一次性支付
 数据埋点
 时序数据库
+
+深度学习模型部署综述（ONNX/NCNN/OpenVINO/TensorRT）
+https://mp.weixin.qq.com/s?__biz=MzU2NjU3OTc5NA==&mid=2247560125&idx=2&sn=001988bca941a9404ac8fe7a351b514d&chksm=fca9ec80cbde659689922250b3138e752cfccf50fde18f07016b7673bf1289bb8bd25bb4f636&scene=27

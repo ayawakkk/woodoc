@@ -272,3 +272,6 @@ https://zhuanlan.zhihu.com/p/720919305
 将商品数据分片存储在多个Redis节点上，实现负载均衡（例如使用Redis Cluster集群）,尽量避免多款商品的热点key 都分布存储在同一台Redis节点上。
 对热门商品设置限流策略，防止请求过多导致Redis压力过大。
 使用缓存预热，提前将热门商品加载到缓存中，避免直接查询数据库。
+
+
+https://b11et3un53m.feishu.cn/wiki/UMgpwmmQKisWBIkaABbcwAPonVf

@@ -273,5 +273,5 @@ https://zhuanlan.zhihu.com/p/720919305
 对热门商品设置限流策略，防止请求过多导致Redis压力过大。
 使用缓存预热，提前将热门商品加载到缓存中，避免直接查询数据库。
 
-
+微服务框架
 https://b11et3un53m.feishu.cn/wiki/UMgpwmmQKisWBIkaABbcwAPonVf
